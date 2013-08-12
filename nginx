@@ -1,0 +1,7 @@
+ server {
+  server_name resume.j0.hn;
+  listen 80;
+
+  root /apps/resume;
+  index index.html index.htm;
+}
