@@ -1,0 +1,1571 @@
+<!--
+  There's a lot of messiness in here because I was moving fast and
+  maintainability isn't really an issue for a project like this.
+
+  -john
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>John Fawcett's Resume</title>
+
+    <!--[if lt IE 10]>
+    <meta http-equiv="refresh" content="0;URL=/john-fawcett-resume.pdf">
+    <![endif]>-->
+
+    <link rel="stylesheet" href="fonts/Klinic_Personal/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700' rel='stylesheet' type='text/css'>
+    <style>
+      /*
+        blue:         #2C3E50 rgb(44,   62,  80);
+        red:          #FA4248 rgb(250,  66,  72);
+        light-gray:   #D7DADB rgb(215, 218, 219);
+        bright-blue:  #6DBCDB rgb(109, 188, 219);
+        white:        #fff    rgb(255, 255, 255);
+       */
+
+      html, body {
+        font-family: "Roboto";
+        color: #444;
+        font-weight: 300;
+        font-size: 14px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #FDF9F7;
+        -webkit-print-color-adjust: exact;
+        -moz-print-color-adjust: exact;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: "Klinic Slab";
+        font-weight: 300;
+        color: #2C3E50;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .section-title .sub-text {
+        font-size: 16px;
+        margin-top: -2px;
+        color: #777;
+        font-family: Roboto;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: 1.6em;
+      }
+
+      h3 {
+        font-size: 1.5em;
+      }
+
+      h3 + .sub-text {
+        margin-top: -16px;
+      }
+
+      section {
+        padding: 0 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: dotted 1px #CCC;
+        box-shadow: 0 1px 0 #FFF;
+      }
+
+      .section-title {
+        position: relative;
+        font-size: 30px;
+        padding-left: 20px;
+        padding-bottom: 14px;
+        border-left: dotted 3px #6DBCDB;
+        padding-top: 20px;
+        margin-left: -20px;
+      }
+
+      a {
+        color: #6DBCDB;
+      }
+
+      .contact {
+        font-size: 13px;
+        font-family: Roboto;
+        float: right;
+        margin-top: -70px;
+        text-align: right;
+        color: #777;
+      }
+
+      @media (max-width: 500px) {
+        .contact {
+          float: none;
+          text-align: left;
+          margin-top: 26px;
+        }
+
+        .document-download-mobile {
+          margin-top: 20px;
+        }
+      }
+
+      .document-download-mobile {
+        display: none;
+        float: right;
+        clear: both;
+        font-size: 18px;
+      }
+
+      .content-wrapper {
+        display: table;
+        max-width: 800px;
+        min-width: 300px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-left: 16px;
+      }
+
+      .content-wrapper > section:last-child {
+        border-bottom: 0;
+      }
+
+      .list-scoring dt {
+        display: inline-block;
+        width: 90px;
+        vertical-align: middle;
+        margin-top: -10px;
+        font-weight: 500;
+        font-size: 13px;
+      }
+
+      .list-scoring dd {
+        display: inline-block;
+        margin-left: 0;
+      }
+
+      .list-scoring .list-item {
+        display: inline-block;
+        margin: 10px 40px;
+      }
+
+      .list-scoring .list-item:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      .meter {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 12px;
+        border-radius: 8px;
+        border: solid 1px #696969;
+        font-size: 10px;
+        text-align: center;
+      }
+
+      .meter > .position {
+        position: absolute;
+        height: 100%;
+        background: #CCC;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        border-right: solid 1px #AAA;
+      }
+
+      .meter.meter-blue {
+        border: solid 1px #638A99;
+        color: #FFF;
+      }
+
+      .meter.meter-blue > .position {
+        background: #6DBCDB;
+        border-right: solid 1px #659AAF;
+      }
+
+      .block-meter span {
+        vertical-align: bottom;
+      }
+
+      .block-meter .total {
+        display: inline-block;
+        font-size: 12px;
+        margin-left: 6px;
+      }
+
+      .block-meter .block {
+        display: inline-block;
+        width: 18px;
+        height: 22px;
+        margin-right: 2px;
+        position: relative;
+        overflow: hidden;
+        border: solid 1px #ccc;
+        border-radius: 2px;
+      }
+
+      .block-meter .inner-block {
+        background: #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .block-meter.block-meter-red .block {
+        border: solid 1px #FFB3B6;
+      }
+
+      .block-meter.block-meter-red .inner-block {
+        background: #FA4248;
+      }
+
+      .block-meter.block-meter-yellow .block {
+        border: solid 1px #DBDDAF;
+      }
+
+      .block-meter.block-meter-yellow .inner-block {
+        background: #FFF689;
+      }
+
+      .block-meter.block-meter-blue .block {
+        border: solid 1px #9DB3C3;
+      }
+
+      .block-meter.block-meter-blue .inner-block {
+        background: #61ADFF;
+      }
+
+      .block-meter.block-meter-purple .block {
+        border: solid 1px #BEAFDD;
+      }
+
+      .block-meter.block-meter-purple .inner-block {
+        background: #A589FF;
+      }
+
+      .block-meter.block-meter-orange .block {
+        border: solid 1px #E6CA90;
+      }
+
+      .block-meter.block-meter-orange .inner-block {
+        background: #FFBC44;
+      }
+
+      .column-list {
+        list-style: none;
+        margin: 12px 0;
+        padding: 0;
+        font-size: 0;
+      }
+
+      .column-list > li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1rem;
+        color: #666;
+        width: 33%;
+        padding: 0 20px;
+        margin: 12px 0;
+        border-left: solid 2px #D7DADB;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      @media screen and (max-width: 600px) {
+        .column-list > li {
+          width: 100%;
+        }
+      }
+
+      @media screen and (min-width: 601px) and (max-width: 780px) {
+        .column-list > li {
+          width: 50%;
+        }
+      }
+
+      .job {
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        border-bottom: solid 1px #D7DADB;
+      }
+
+      .job:last-child {
+        border-bottom: none;
+      }
+
+      .reference-name {
+        margin-bottom: 2px;
+      }
+
+      .reference-title {
+        font-style: italic;
+      }
+
+      .document-download {
+        position: absolute;
+        bottom: -8px;
+        right: -12px;
+        text-align: center;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        transform: scale(0.8);
+      }
+
+      .document-download path,
+      .document-download rect {
+        opacity: 0.5;
+        fill: #64292B;
+        -webkit-transition: opacity linear 0.2s;
+        -moz-transition: opacity linear 0.2s;
+        -ms-transition: opacity linear 0.2s;
+        -o-transition: opacity linear 0.2s;
+        transition: opacity linear 0.2s;
+      }
+
+      .document-download:hover path,
+      .document-download:hover rect {
+        opacity: 0.8;
+      }
+
+      .document-download .text {
+        opacity: 0;
+        -webkit-transition: opacity linear 0.2s;
+        -moz-transition: opacity linear 0.2s;
+        -ms-transition: opacity linear 0.2s;
+        -o-transition: opacity linear 0.2s;
+        transition: opacity linear 0.2s;
+      }
+
+      .document-download:hover .text {
+        opacity: 1;
+      }
+
+      .main-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: #FA4248;
+        box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
+        border-left: solid 1px #BD3338;
+        -webkit-transition: width ease-in-out 0.3s, opacity ease-in-out 0.3s;
+        -moz-transition: width ease-in-out 0.3s, opacity ease-in-out 0.3s;
+        -ms-transition: width ease-in-out 0.3s, opacity ease-in-out 0.3s;
+        -o-transition: width ease-in-out 0.3s, opacity ease-in-out 0.3s;
+        transition: width ease-in-out 0.3s, opacity ease-in-out 0.3s;
+      }
+
+      .main-nav > li {
+        display: block;
+        margin: 0;
+        border-bottom: solid 1px #BD373C;
+        box-shadow: 0 1px 0 #FF6166;
+      }
+
+      .main-nav > li:hover {
+        background: #F85056;
+        box-shadow: 0 1px 0 #FF6166,
+              inset 0 1px 0 #FF696E;
+      }
+
+      .main-nav > li.selected {
+        background: #DB3C41;
+        box-shadow: 0 1px 0 #FF6166,
+              inset 0 1px 0 #FC545A;
+      }
+
+      .main-nav > li > a {
+        position: relative;
+        display: block;
+        padding: 20px 8px 14px 32px;
+        text-decoration: none;
+        color: #64292B;
+        font-family: "Klinic Slab";
+        font-weight: 300;
+        text-shadow: 0 1px 0 #FF6166;
+        font-size: 18px;
+      }
+
+      .main-nav > li > a:before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 8px;
+        width: 10px;
+        height: 10px;
+        background: #752729;
+        opacity: 0.27;
+        margin: 2px;
+        border: solid #000 1px;
+      }
+
+      .main-nav > li.selected > a:before {
+        background: #2C3E50;
+      }
+
+      @media print {
+        html, body { background: #fff; }
+
+        .main-nav,
+        .document-download-mobile {
+          display: none !important;
+        }
+
+        section {
+          border-bottom: solid 1px #ccc;
+          box-shadow: none;
+        }
+
+        .list-scoring .list-item {
+          margin-left: 10px;
+        }
+
+        #language-proficiency,
+        #tool-and-environment-proficiency,
+        #job-goodybag,
+        #job-canonball {
+          page-break-after: always;
+          border-bottom: 0;
+        }
+
+        #job-enrg .responsibilities-header,
+        #job-rcisd .responsibilities-header,
+        #job-unt .technologies-header {
+          page-break-before: always;
+        }
+      }
+
+      @media (min-width: 967px) and (max-width: 1054px) {
+        .main-nav { width: 210px; }
+      }
+
+      @media (min-width: 930px) and (max-width: 966px) {
+        .main-nav { width: 170px; }
+      }
+
+      @media (max-width: 500px) {
+        .document-download-mobile {
+          display: inline-block;
+          margin-top: -54px;
+        }
+      }
+
+      @media (min-width: 501px) and (max-width: 928px) {
+        .document-download-mobile {
+          display: inline-block;
+          margin-top: 20px;
+        }
+      }
+
+      @media (max-width: 929px) {
+        .main-nav { width: 0; opacity: 0; }
+
+        .list-scoring .list-item {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+      }
+    </style>
+
+    <script>
+    var ignoreScroll = false;
+    var onAnchorClick = function(e){
+      var index;
+      if ((index = e.target.href.indexOf('#')) > -1 && index !== e.target.href.length - 1){
+        ignoreScroll = true;
+        if ( 'preventDefault' in e ) e.preventDefault();
+        var
+          hash  = e.target.href.substring( index + 1 )
+        , curr  = window.scrollY
+        , pos   = window[ hash ].offsetTop - curr - 60 // padding for nav
+
+          // Applies each step of the animation setting the proper time to execute
+        , applyScrollStep = function(step, duration){
+            setTimeout(function(){
+              window.scrollTo(0, easeInOutQuad(step, curr, pos, duration));
+            }, 1 * step);
+          }
+        ;
+
+        // Change hash
+        if (history && window.location.hash !== hash)
+          history.pushState(null, null, '#' + hash);
+
+        // Animate
+        for (var step = 0, duration = 320; step < duration; step++){
+          applyScrollStep(step, duration);
+        }
+        setTimeout(function(){ ignoreScroll = false; }, 800);
+      }
+    };
+
+    var onMainNavClick = function(e){
+      Array.prototype.slice.call(
+        document.querySelectorAll( '.main-nav li' )
+      , 0
+      ).forEach( function( anchor ){
+        anchor.className = anchor.className.replace(
+          /\s*selected\s*/, ' '
+        );
+      });
+
+      e.target.parentElement.className = 'selected';
+    };
+
+    var easeInOutQuad = function(t, b, c, d){
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    var docHeight = function(){
+      var body = document.body, html = document.documentElement;
+
+      return Math.max(
+        body.scrollHeight
+      , body.offsetHeight
+      , html.clientHeight
+      , html.scrollHeight
+      , html.offsetHeight
+      );
+    }
+
+    var debounce = function(func, wait, immediate) {
+      var result;
+      var timeout = null;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) result = func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) result = func.apply(context, args);
+        return result;
+      };
+    };
+
+    document.addEventListener('DOMContentLoaded', function(){
+      Array.prototype.slice.call(
+        document.querySelectorAll( '.main-nav > li > a' )
+      , 0
+      ).forEach( function( anchor ){
+        anchor.addEventListener( 'click', onAnchorClick );
+        anchor.addEventListener( 'click', onMainNavClick );
+      });
+
+      var navLinks = {}, watchTops = [];
+
+      [
+        "introduction"
+      , "education"
+      , "language-proficiency"
+      , "os-proficiency"
+      , "tool-and-environment-proficiency"
+      , "professional-experience"
+      , "references"
+      ].forEach( function( id ){
+        navLinks[ id ] = {
+          el: document.getElementById( id )
+        , anchor: document.querySelector( 'a[href="#' + id + '"]' )
+        };
+      });
+
+      var threshold = 30;
+
+      var onScroll = function(){
+        if ( ignoreScroll ) return;
+
+        if ( window.scrollY + document.documentElement.clientHeight + threshold >= docHeight() - 100 ){
+
+          if ( window.location.hash === '#references' ) return;
+          onMainNavClick({
+            target: navLinks.references.anchor
+          });
+
+          return history ? history.pushState( null, null, '#references' ) : null;
+        }
+
+        for (var key in navLinks ) {
+
+          if (
+            window.scrollY > navLinks[ key ].el.offsetTop - threshold &&
+            window.scrollY <= navLinks[ key ].el.offsetTop + navLinks[ key ].el.offsetHeight + threshold - 5
+          ) {
+
+            if (window.location.hash === '#' + key) return;
+
+            onMainNavClick({
+              target: navLinks[ key ].anchor
+            });
+
+            if ( history ) history.pushState( null, null, '#' + key )
+
+            break;
+          }
+        }
+      };
+
+      window.addEventListener( 'scroll', debounce( onScroll, 5, true));
+
+      if ( window.location.hash != null && window.location.hash.substring( 1 ) in navLinks ){
+        onMainNavClick({
+          target: navLinks[ window.location.hash.substring( 1 ) ].anchor
+        });
+      }
+    });
+    </script>
+  </head>
+  <body>
+
+    <ul class="main-nav">
+      <li class="selected">
+        <a href="#introduction">
+          Introduction
+        </a>
+      </li>
+      <li>
+        <a href="#education">
+          Education
+        </a>
+      </li>
+      <li>
+        <a href="#language-proficiency">
+          Language Proficiency
+        </a>
+      </li>
+      <li>
+        <a href="#os-proficiency">
+          OS Proficiency
+        </a>
+      </li>
+      <li>
+        <a href="#tool-and-environment-proficiency">
+          Tool and Environment Proficiency
+        </a>
+      </li>
+      <li>
+        <a href="#professional-experience">
+          Professional Experience
+        </a>
+      </li>
+      <li>
+        <a href="#references">
+          References
+        </a>
+      </li>
+      <li>
+        <a href="john-fawcett-resume.pdf">
+          PDF Download
+        </a>
+      </li>
+    </ul>
+
+    <div class="content-wrapper">
+
+      <section id="introduction">
+        <h1 class="section-title">
+          John Fawcett
+          <p class="sub-text">Full-stack developer. Future rich person.</p>
+          <div class="contact">
+            <div class="phone">469-387-5077</div>
+            <div class="email"><a href="#">jrf0110@gmail.com</a></div>
+            <div class="address">1900 Ullrich Ave<br>Austin, TX, 78756</div>
+          </div>
+          <a class="document-download-mobile" href="john-fawcett-resume.pdf">
+            PDF Download
+          </a>
+        </h1>
+        <p>Hi, I'm John. I'm a 25 year old developer living in Austin, TX.</p>
+        <p>My ideal job is one where I utilize modern tools and development practices. Git, Github Flow, and trello for project management, Node.js on the server, Backbone or Angular on the client. Ideally, I would be building single-page web applications backed by RESTful services. I'm currently a full-stack developer, sometimes designer and I want to keep it that way. I to work for a company whose culture that empowers myself and my co-workers. A company that integrates itself in the community that supports it. I want to work for a company with integrity and social responsibility.</p>
+      </section>
+
+      <section id="education">
+        <h1 class="section-title">
+          University of North Texas
+          <p class="sub-text">
+            B.S. in Computer Science<br />
+            2006-2011
+          </p>
+        </h1>
+      </section>
+
+      <section id="language-proficiency">
+        <h1 class="section-title">Language Proficiency</h1>
+        <p>My first love is the web. As such, I excel at web technologies.</p>
+        <dl class="list-scoring">
+          <div class="list-item">
+            <dt>JavaScript</dt>
+            <dd>
+              <div class="block-meter block-meter-red">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="total">4.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>HTML</dt>
+            <dd>
+              <div class="block-meter block-meter-yellow">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 90%"></span>
+                </span>
+                <span class="total">4.9/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>CSS</dt>
+            <dd>
+              <div class="block-meter block-meter-yellow">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="total">4.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>PHP</dt>
+            <dd>
+              <div class="block-meter block-meter-blue">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0%"></span>
+                </span>
+                <span class="total">4.0/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>C#</dt>
+            <dd>
+              <div class="block-meter block-meter-orange">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 10%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0%"></span>
+                </span>
+                <span class="total">3.1/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>C/C++</dt>
+            <dd>
+              <div class="block-meter block-meter-purple">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0%"></span>
+                </span>
+                <span class="total">2.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="os-proficiency">
+        <h1 class="section-title">Operating System Proficiency</h1>
+        <p>Started off with Windows. Ended up on Linux and OS/X.</p>
+        <dl class="list-scoring">
+          <div class="list-item">
+            <dt>OS/X</dt>
+            <dd>
+              <div class="block-meter block-meter-purple">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 40%"></span>
+                </span>
+                <span class="total">4.4/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Windows</dt>
+            <dd>
+              <div class="block-meter block-meter-blue">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 30%"></span>
+                </span>
+                <span class="total">4.3/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Linux</dt>
+            <dd>
+              <div class="block-meter block-meter-yellow">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0%"></span>
+                </span>
+                <span class="total">4.0/5.0</span>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="tool-and-environment-proficiency">
+        <h1 class="section-title">Tool and Environment Proficiency</h1>
+        <p>My web tools of choice are Node, Express, Postgres, Require, Backbone, and Handlebars.</p>
+        <dl class="list-scoring">
+          <div class="list-item">
+            <dt>Node.js</dt>
+            <dd>
+              <div class="block-meter block-meter-blue">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 60%"></span>
+                </span>
+                <span class="total">4.6/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Express.js</dt>
+            <dd>
+              <div class="block-meter block-meter-yellow">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 40%"></span>
+                </span>
+                <span class="total">4.4/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Postgres</dt>
+            <dd>
+              <div class="block-meter block-meter-yellow">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 30%"></span>
+                </span>
+                <span class="total">4.3/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Backbone.js</dt>
+            <dd>
+              <div class="block-meter block-meter-purple">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 40%"></span>
+                </span>
+                <span class="total">4.4/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Require.js</dt>
+            <dd>
+              <div class="block-meter block-meter-orange">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 60%"></span>
+                </span>
+                <span class="total">4.6/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>ElasticSearch</dt>
+            <dd>
+              <div class="block-meter block-meter-red">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0"></span>
+                </span>
+                <span class="total">3.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>MongoDB</dt>
+            <dd>
+              <div class="block-meter block-meter-purple">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 10%"></span>
+                </span>
+                <span class="total">4.1/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Handlebars</dt>
+            <dd>
+              <div class="block-meter block-meter-orange">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="total">4.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>jQuery</dt>
+            <dd>
+              <div class="block-meter block-meter-blue">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="total">4.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>W|LAMP</dt>
+            <dd>
+              <div class="block-meter block-meter-yellow">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0"></span>
+                </span>
+                <span class="total">4.0/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Nginx</dt>
+            <dd>
+              <div class="block-meter block-meter-red">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0"></span>
+                </span>
+                <span class="total">3.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>MySQL</dt>
+            <dd>
+              <div class="block-meter block-meter-blue">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0"></span>
+                </span>
+                <span class="total">4.0/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>MsSQL</dt>
+            <dd>
+              <div class="block-meter block-meter-orange">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0"></span>
+                </span>
+                <span class="total">3.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Grunt</dt>
+            <dd>
+              <div class="block-meter block-meter-red">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 30%"></span>
+                </span>
+                <span class="total">4.3/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Sublime Text</dt>
+            <dd>
+              <div class="block-meter block-meter-purple">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 80%"></span>
+                </span>
+                <span class="total">4.8/5.0</span>
+              </div>
+            </dd>
+          </div>
+          <div class="list-item">
+            <dt>Vim</dt>
+            <dd>
+              <div class="block-meter block-meter-orange">
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 100%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 20%"></span>
+                </span>
+                <span class="block">
+                  <span class="inner-block" style="width: 0"></span>
+                </span>
+                <span class="total">3.2/5.0</span>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="professional-experience">
+        <h1 class="section-title">
+          Professional Experience
+        </h1>
+
+        <div class="job" id="job-goodybag">
+          <h2 class="job-title">Goodybag - Software Engineer</h2>
+          <a href="http://goodybag.com" class="website">http://goodybag.com</a>
+          <div class="date">December 2012 - Present</div>
+          <p>When I was approached to join a startup in Austin, TX, I jumped on the opportunity. I had heard that living and breathing the startup culture was a necessity in the software field, so I did it. The emotional and educational ride has been rewarding. My responsibilities at goodybag include:</p>
+          <h3 class="responsibilities-header list-header">
+            Responsibilities
+          </h3>
+          <ul class="responsibilities-list column-list">
+            <li>Handle all front-end development</li>
+            <li>HTML5/PhoneGap Mobile app</li>
+            <li>Titanium Mobile app</li>
+            <li>Build REST APIs</li>
+            <li>Implement ElasticSearch</li>
+            <li>Build and deployment strategies</li>
+          </ul>
+          <p>I learned <em>a lot</em> at Goodybag. Not just about software, but about culture. About the power of community and open source. About empowering employees to affect the companies they work for.</p>
+          <h3 class="technologies-header list-header">
+            Technologies Utilized
+          </h3>
+          <ul class="technologies-list column-list">
+            <li>Node.js</li>
+            <li>Nginx</li>
+            <li>Heroku</li>
+            <li>Postgres</li>
+            <li>MongoDB</li>
+            <li>Express.js</li>
+            <li>Mongoose</li>
+            <li>Handlebars</li>
+            <li>Backbone.js</li>
+            <li>ElasticSearch</li>
+            <li>Git</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h2 class="job-title">Health Management Associates - Systems Administrator</h2>
+          <a href="http://www.hma.com" class="website">http://www.hma.com</a>
+          <div class="date">December 2011 - Present</div>
+          <p>Going to a more corporate environment was a move I thought might make me more comfortable as compared to the chaos of school and contract work. The position asked for someone with Windows Sys Admin skills, web software development, and graphic design prowess. The band of job requirements was appealing.</p>
+          <h3 class="responsibilities-header list-header">
+            Responsibilities
+          </h3>
+          <ul class="responsibilities-list column-list">
+            <li>Build and maintain company Intranet</li>
+            <li>Produce various print media (company posters, table tents, handbooks, etc.)</li>
+            <li>Weirdly, I ran the Photo Studio for doctor portraits</li>
+            <li>Built custom Active Directory user search interfaces</li>
+            <li>Built custom AS400 user search interfaces</li>
+            <li>Standard Windows and AS400 system administration</li>
+          </ul>
+          <p>I worked hard for a year and realized it was not inline with my goals. Although, I am technically still employed by Health Management Associates (the corporate office), I worked out a deal with them so that I only come in when I am absolutely needed.</p>
+          <h3 class="technologies-header list-header">
+            Technologies Utilized
+          </h3>
+          <ul class="technologies-list column-list">
+            <li>PHP</li>
+            <li>node.js</li>
+            <li>C#</li>
+            <li>Batch scripting</li>
+            <li>Photoshop</li>
+          </ul>
+        </div>
+
+        <div class="job" id="job-enrg">
+          <h2 class="job-title">ENRG Consultants - Software Developer</h2>
+          <a href="http://www.enrgconsultants.com" class="website">http://www.enrgconsultants.com</a>
+          <div class="date">December 2008 - Present</div>
+          <p>Admittedly, this was originally a contract position that turned into full-time and is now back in contract mode, but I would rather have this position on its own. While I was in college, I was approached by Todd Boring, owner of ENRG. He asked me if it was possible to automate the work he was currently doing and to make his product real-time and on the web. Being an eager college student, I said, "of course."</p>
+          <h3 class="responsibilities-header list-header">
+            Responsibilities
+          </h3>
+          <ul class="responsibilities-list column-list">
+            <li>Write software suite for managing monitoring jobs</li>
+            <li>Provide general IT expertise for the entire company</li>
+            <li>Maintain noise monitoring jobs</li>
+          </ul>
+          <p>I developed and helped research the noise-monitoring solution ENRG provides for the oil, gas, and construction industries. Back in 2008, I was awful at design and their website and product reflects that. However, a new version is in the works. The point is, in 2008, I wrote a bunch of software that is still in use and supporting a company today.</p>
+          <h3 class="technologies-header list-header">
+            Technologies Utilized (over the years)
+          </h3>
+          <ul class="technologies-list column-list">
+            <li>Apache</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>C# ASP.Net</li>
+            <li>MsSQL</li>
+            <li>Node.js</li>
+            <li>Postgres</li>
+          </ul>
+        </div>
+
+        <div class="job" id="job-unt">
+          <h2 class="job-title">University of North Texas - Multimedia Information Group Research Assistant</h2>
+          <a href="http://www.unt.edu" class="website">http://www.unt.edu</a>
+          <div class="date">February 2008 - January 2009</div>
+          <p>After my 3rd semester in Computer Science at UNT, I was invited to help the Multimedia Information Group (MIG) with its research. At UNT, each research group is required to have two undergraduates. My CS3 professor recommended me to work with MIG because of my previous experience working with the web. My duties ranged from creating the group website, publishing results, running image processing benchmarks, and even writing a few lines of C++. Primarily, I was tasked with the public-facing website and publishing results.</p>
+          <h3 class="responsibilities-header list-header">
+            Responsibilities
+          </h3>
+          <ul class="responsibilities-list column-list">
+            <li>Design, build, and maintain group website</li>
+            <li>Build unit tests for the masters students</li>
+            <li>Running benchmarks and curating results</li>
+          </ul>
+          <h3 class="technologies-header list-header">
+            Technologies Utilized
+          </h3>
+          <ul class="technologies-list column-list">
+            <li>Apache</li>
+            <li>Linux</li>
+            <li>PHP</li>
+            <li>Wordpress</li>
+            <li>SubVersion</li>
+            <li>C++</li>
+            <li>CUDA</li>
+          </ul>
+        </div>
+
+        <div class="job" id="job-canonball">
+          <h2 class="job-title">Canonball Creative - Web Deveoper</h2>
+          <a href="http://www.canonball.com" class="website">http://www.canonball.com</a>
+          <div class="date">March 2008 - December 2009</div>
+          <p>Coming out of Royse City, I was a self-taught web developer and self-ascribed designer. When I started work for Canonball in 2008, I learned how to work with other people, and more importantly, I met real designers. I did a lot of client work and even some projects that are still live (see <a href="http://www.eisenberginc.com" target="_blank">http://www.eisenberginc.com</a>). I realized the vastness of the web community and with that realization came humbleness and humility.</p>
+          <h3 class="responsibilities-header list-header">
+            Responsibilities
+          </h3>
+          <ul class="responsibilities-list column-list">
+            <li>Build standards compliant websites</li>
+            <li>Support down to IE6</li>
+            <li>Slice designs</li>
+            <li>Brainstorm in product meetings</li>
+          </ul>
+          <h3 class="technologies-header list-header">
+            Technologies Utilized
+          </h3>
+          <ul class="technologies-list column-list">
+            <li>Apache</li>
+            <li>PHP</li>
+            <li>Wordpress</li>
+            <li>ModX</li>
+            <li>MooTools</li>
+            <li>jQuery</li>
+            <li>HTML/CSS/JavaScript</li>
+            <li>SubVersion</li>
+            <li>Photoshop</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h2 class="job-title">Independent Contractor</h2>
+          <div class="date">March 2005 - Present</div>
+          <p>In high school, I realized I could make money from making web pages for small businesses. I have been doing it ever since. Projects range from simple brochure websites, to poster print and graphic design, to digital media signage with automatic updates. A few of the companies that have contracted me are:</p>
+          <ul class="responsibilities-list column-list">
+            <li>
+              Agency Entourage
+              <br /><a href="http://agencyentourage.com">http://agencyentourage.com</a>
+            </li>
+            <li>
+              Culture Farm
+              <br /><a href="http://culturefarm.co">http://culturefarm.co</a>
+            </li>
+            <li>
+              Front Burner Restaurants
+              <br /><a href="http://www.frontburnerbrands.com">http://www.frontburnerbrands.com</a>
+            </li>
+            <li>
+              ENRG Consultants
+              <br /><a href="http://www.enrgconsultants.com">http://www.enrgconsultants.com</a>
+            </li>
+          </ul>
+          <h3 class="technologies-header list-header">
+            Technologies Utilized
+          </h3>
+          <ul class="technologies-list column-list">
+            <li>Apache</li>
+            <li>PHP</li>
+            <li>Wordpress</li>
+            <li>ModX</li>
+            <li>MooTools</li>
+            <li>jQuery</li>
+            <li>HTML/CSS/JavaScript</li>
+            <li>SubVersion</li>
+            <li>Photoshop</li>
+          </ul>
+        </div>
+
+        <div class="job" id="job-rcisd">
+          <h2 class="job-title">Royse City ISD - IT Support/Webmaster</h2>
+          <a href="http://www.rcisd.org" class="website">http://www.rcisd.org</a>
+          <div class="date">June 2004 - December 2009</div>
+          <p>At the end of my sophomore year of high school, I was approached by the IT department to work as a technology intern. This was a lot more appealing than what my peers were doing for work. I ended up designing and developing the district website and managing all of the sub-campus web pages. I kept the job in college and worked remotely.</p>
+          <h3 class="responsibilities-header list-header">
+            Responsibilities
+          </h3>
+          <ul class="responsibilities-list column-list">
+            <li>Design and build district website</li>
+            <li>Design and build campus websites</li>
+            <li>Implement Wordpress and train campus website managers</li>
+            <li>General Windows/Novell systems administration</li>
+          </ul>
+          <h3 class="technologies-header list-header">
+            Technologies Utilized
+          </h3>
+          <ul class="technologies-list column-list">
+            <li>Apache</li>
+            <li>PHP</li>
+            <li>Wordpress</li>
+            <li>HTML/CSS/JavaScript</li>
+            <li>Photoshop</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="references">
+        <h1 class="section-title">References</h1>
+        <p>More references available upon request.</p>
+        <ul class="column-list">
+          <li class="reference">
+            <h3 class="reference-name">Lalit Kapoor</h3>
+            <div class="reference-title">Co-founder and CTO</div>
+            <div class="reference-company">Goodybag</div>
+            <a href="mailto:lalit@goodybag.com" class="reference-email">lalit@goodybag.com</a>
+            <div class="reference-phone">757-277-6676</div>
+          </li>
+          <li class="reference">
+            <h3 class="reference-name">Todd Boring</h3>
+            <div class="reference-title">Founder and CEO</div>
+            <div class="reference-company">ENRG Consultants</div>
+            <a href="mailto:todd@enrgconsultants.com" class="reference-email">todd@enrgconsultants.com</a>
+            <div class="reference-phone">214-674-3762</div>
+          </li>
+          <li class="reference">
+            <h3 class="reference-name">Esau Hererra</h3>
+            <div class="reference-title">Director of Information Systems</div>
+            <div class="reference-company">Dallas Regional Medical Center</div>
+            <a href="mailto:esau.hererra@hma.com" class="reference-email">esau.hererra@hma.com</a>
+            <div class="reference-phone">214-454-6705</div>
+          </li>
+          <li class="reference">
+            <h3 class="reference-name">Jonathan Simpson</h3>
+            <div class="reference-title">Founder</div>
+            <div class="reference-company">Canonball Creative</div>
+            <a href="mailto:jsimpson@canonball.com" class="reference-email">jsimpson@canonball.com</a>
+            <div class="reference-phone">214-477-9450</div>
+          </li>
+          <li class="reference">
+            <h3 class="reference-name">Richard Pense</h3>
+            <div class="reference-title">Former Director of Instructional Technology</div>
+            <div class="reference-company">Royse City ISD</div>
+            <a href="mailto:penser@rcisd.org" class="reference-email">penser@rcisd.org</a>
+            <div class="reference-phone">469-853-3528</div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+  </body>
+</html>
